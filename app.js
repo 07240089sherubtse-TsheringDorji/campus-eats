@@ -17,9 +17,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Parse form data
 app.use(express.urlencoded({ extended: true }));
 
+app.use(express.json());
+
 // Routes
 const indexRoutes = require('./routes/index');
 app.use('/', indexRoutes);
+
+const apiRoutes = require('./routes/api');
+app.use('/api', apiRoutes);
 
 
 app.listen(PORT, () => {
