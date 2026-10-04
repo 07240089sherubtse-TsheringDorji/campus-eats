@@ -15,23 +15,6 @@
   <p id="lookupResult"></p>
 </section>
 
-<section class="restaurants">
-  <h2>Popular Restaurants</h2>
-  <div class="restaurant-grid">
-    <% restaurants.forEach(r => { %>
-      <div class="restaurant-card">
-        <div class="avatar"><%= r.name.charAt(0) %></div>
-        <h3><%= r.name %></h3>
-        <p><%= r.cuisine %></p>
-        <span class="rating-pill">★ <%= r.rating %></span>
-        <a href="/restaurants/<%= r.id %>/menu" class="btn">View Menu</a>
-      </div>
-    <% }); %>
-  </div>
-</section>
-
-<%- include('partials/footer') %>
-
 <section class="stats-bar">
  <p><strong><%= stats.total_orders %></strong> orders placed · Nu. <strong><%=
 stats.total_revenue %></strong> in sales</p>
@@ -49,4 +32,24 @@ stats.total_revenue %></strong> in sales</p>
  </div>
  </section>
 <% } %>
+
+
+<section class="restaurants">
+  <h2>Popular Restaurants</h2>
+  <div class="restaurant-grid">
+    <% restaurants.forEach(r => { %>
+      <div class="restaurant-card">
+        <div class="avatar"><%= r.name.charAt(0) %></div>
+        <h3><%= r.name %></h3>
+        <p><%= r.cuisine %></p>
+        <span class="rating-pill">★ <%= r.rating %></span>
+        <a href="/restaurants/<%= r.id %>/menu" class="btn">View Menu</a>
+      </div>
+    <% }); %>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
+
+
 
